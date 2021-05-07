@@ -5,12 +5,84 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+::-webkit-scrollbar
+{
+  /* 1. CSS Styles*/
+  background-color: black;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb
+{
+  /* 1. CSS Styles*/
+  background-color: blue;
+  border-radius: 10%;
+}
 a {
   color: inherit;
   text-decoration: none;
 }
+a:hover{
+  cursor: pointer;
+}
+
+.add svg:hover{
+  fill: blue;
+}
 
 * {
   box-sizing: border-box;
+}
+.bg-black{
+  background-color: black;
+}
+.vh-90{
+  height: 90vh;
+}
+.vh-80{
+  height: 80vh;
+}
+.h-49{
+  height: 49%;
+}
+.h-2{
+  height: 2%;
+}
+.vw-10{
+  width: 10vw;
+}
+.vw-20{
+  width: 20vw;
+}
+.vw-30{
+  width: 30vw;
+}
+.vw-40{
+  width: 40vw;
+}
+.vw-50{
+  width: 50vw;
+}
+.vw-80{
+  width: 80vw;
+}
+.pt-120{
+  padding-top: 120px;
+}
+.pt-145{
+  padding-top: 145px;
+}
+.pb-45{
+  padding-bottom: 45px;
+}
+.pt-150{
+  padding-top: 150px;
+}
+.list{
+  width: 10vw;
+}
+
+@media screen and (max-width: 992px) {
+  .list{
+    width: 100vw;
+  }
 }
