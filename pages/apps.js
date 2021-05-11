@@ -5,7 +5,7 @@ export default function apps() {
 const [cards, setCards] = React.useState([]);
 const [apps, setApps] = React.useState([]);
 
-React.useEffect(()=> {if(apps.length === 0)fetch('/api/apps').then(res=>res.json()).then(res=> res.status ? setApps(res.data) : window.location.href = '/500')});
+React.useEffect(()=> {console.log('fetching...'); fetch('/api/apps').then(res=>res.json()).then(res=> res.status ? setApps(res.data) : window.location.href = '/500')}, []);
 
     function handleOpenApp(e)
     {
