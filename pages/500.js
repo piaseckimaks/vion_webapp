@@ -1,4 +1,4 @@
-import layout from '../layouts/_Layout'
+import layout from '../layouts/_NoLayout'
 
 export default function Custom500() {
     return (

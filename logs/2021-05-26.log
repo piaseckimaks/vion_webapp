@@ -1,0 +1,30 @@
+[2021-05-26T04:52:48.379] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T04:52:48.387] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:03:05.792] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:03:05.799] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:03:19.428] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:03:19.431] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:03:51.807] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:03:51.811] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:04:20.210] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:04:20.217] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:04:21.462] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:04:21.466] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:05:00.624] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:05:00.625] [WARN] app - Failed login for username: 'max'
+[2021-05-26T05:05:01.510] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:05:01.512] [WARN] app - Failed login for username: 'max'
+[2021-05-26T05:05:01.782] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:05:01.783] [WARN] app - Failed login for username: 'max'
+[2021-05-26T05:05:14.174] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:05:14.175] [WARN] app - Failed login for username: 'max'
+[2021-05-26T05:06:18.898] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:06:18.904] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:08:04.528] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:08:04.531] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:08:43.306] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:08:43.308] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:13:09.221] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:13:09.226] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-26T05:14:32.713] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-26T05:14:32.716] [INFO] app - User 'max' succesfully logged from 127.0.0.1

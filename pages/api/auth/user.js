@@ -1,22 +1,24 @@
-import withSession from '../../util/session'
+import withSession from '../../../util/session'
 import sqlite3 from 'sqlite3'
+import { resolveHref } from 'next/dist/next-server/lib/router/router'
 
 export default withSession(async (req,res)=>
 {
     const user = await req.session.get('user')
+    const error = await req.session.get('error')
     const db = new sqlite3.Database('./database.db')
 
     if(user)
     {
-        console.log(user)
         db.all(
-            `select a.name from FavApps as f
+            `select f.id, a.name from FavApps as f
                         left join Users as u on u.id = f.UserId
                         left join Apps as a on a.id = f.AppId
                     where f.UserId = ${user.id}
                     `,
             (err, rows) => {
-                //if (err) { console.log(err); res.status(500); }
+                if (err) { console.log(err); res.status(500); return}
+                console.log(rows)
                 res.json( 
                 {
                     apps: rows,
@@ -24,6 +26,8 @@ export default withSession(async (req,res)=>
                     ...user
                 })
             })
+        return
     }
-    else res.json({isLoggedIn: false})
+    if(error) { res.json({error: error}); return }
+    res.json({isLoggedIn: false})
 })

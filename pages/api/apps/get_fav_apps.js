@@ -20,12 +20,18 @@ const logger = log4js.getLogger();
 
 export default (req,res) =>
 {
+    const { userId } = req.body
+
     db.all(
-        'select * from Apps',
+        `select f.id, a.name from FavApps as f
+        left join Users as u on u.id = f.UserId
+        left join Apps as a on a.id = f.AppId
+        where f.UserId = ${userId}
+        `,
         (err,rows)=>
         {
             if(err) {logger.error(err); res.status(500).send({status: false, err: 'Internal server error!'}); return }
-            res.status(200).send({status: true, data: rows});
-            logger.info('Data succesfully from /api/apps sent ' + req.connection.remoteAddress);
+            
+            console.log(rows)
         })
 }

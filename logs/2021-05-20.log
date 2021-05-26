@@ -1,0 +1,27 @@
+[2021-05-20T16:28:36.114] [WARN] app - Failed login for username: ''
+[2021-05-20T16:28:40.840] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T16:28:40.843] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T17:28:00.981] [WARN] app - Failed login for username: ''
+[2021-05-20T17:28:05.806] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T17:28:05.809] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T17:29:00.025] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T17:29:00.037] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T17:29:13.750] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T17:29:13.753] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T17:32:11.340] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T17:32:11.355] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T17:32:19.674] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T17:32:19.677] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T17:37:38.897] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T17:37:38.913] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T19:00:12.848] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T19:00:12.893] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T19:01:13.321] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T19:01:13.327] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T19:35:29.606] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T19:35:29.618] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T19:43:18.078] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T19:43:18.084] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-05-20T20:51:36.438] [WARN] app - Failed login for username: 'max'
+[2021-05-20T20:51:39.844] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-05-20T20:51:39.846] [INFO] app - User 'max' succesfully logged from 127.0.0.1

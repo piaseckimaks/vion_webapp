@@ -1,0 +1,47 @@
+[2021-05-14T18:07:48.519] [INFO] app - Received request from 127.0.0.1 as awd
+[2021-05-14T18:07:48.522] [ERROR] app - [Error: SQLITE_ERROR: no such table: sers] {
+  errno: 1,
+  code: 'SQLITE_ERROR'
+}
+[2021-05-14T18:08:49.628] [INFO] app - Received request from 127.0.0.1 as max
+[2021-05-14T18:08:49.629] [ERROR] app - [Error: SQLITE_ERROR: no such table: sers] {
+  errno: 1,
+  code: 'SQLITE_ERROR'
+}
+[2021-05-14T18:09:06.754] [INFO] app - Received request from undefined as max
+[2021-05-14T18:09:06.758] [ERROR] app - [Error: SQLITE_ERROR: no such table: sers] {
+  errno: 1,
+  code: 'SQLITE_ERROR'
+}
+[2021-05-14T18:09:26.393] [INFO] app - Received request from 127.0.0.1 as adw
+[2021-05-14T18:09:26.395] [WARN] app - Failed login for username: adw
+[2021-05-14T18:09:41.875] [INFO] app - Received request from 127.0.0.1 as max
+[2021-05-14T18:09:41.880] [INFO] app - User max succesfully logged from 127.0.0.1
+[2021-05-14T18:11:44.701] [INFO] app - Received request from 127.0.0.1 as 'awd'
+[2021-05-14T18:11:44.703] [WARN] app - Failed login for username: 'awd'
+[2021-05-14T18:13:18.352] [INFO] app - Received request from 127.0.0.1 as 'awd'
+[2021-05-14T18:13:18.355] [ERROR] app - [Error: SQLITE_ERROR: no such table: sers] {
+  errno: 1,
+  code: 'SQLITE_ERROR'
+}
+[2021-05-14T18:13:26.211] [INFO] app - Received request from 127.0.0.1 as 'awd'
+[2021-05-14T18:13:26.212] [ERROR] app - [Error: SQLITE_ERROR: no such table: sers] {
+  errno: 1,
+  code: 'SQLITE_ERROR'
+}
+[2021-05-14T18:18:14.614] [INFO] app - Received request from 127.0.0.1 as 'awd'
+[2021-05-14T18:18:14.625] [ERROR] app - [Error: SQLITE_ERROR: no such table: sers] {
+  errno: 1,
+  code: 'SQLITE_ERROR'
+}
+[2021-05-14T18:18:52.996] [INFO] app - Received request from 127.0.0.1 as 'adw'
+[2021-05-14T18:18:52.999] [WARN] app - Failed login for username: 'adw'
+[2021-05-14T18:20:14.447] [INFO] app - Received request from 127.0.0.1 as 'adw'
+[2021-05-14T18:20:14.451] [WARN] app - Failed login for username: 'adw'
+[2021-05-14T18:26:15.049] [INFO] app - Received request from 127.0.0.1 as 'adw'
+[2021-05-14T18:26:15.052] [WARN] app - Failed login for username: 'adw'
+[2021-05-14T18:26:22.117] [WARN] app - Failed login for username: ''
+[2021-05-14T18:26:37.012] [INFO] app - Received request from 127.0.0.1 as 'awd'
+[2021-05-14T18:26:37.015] [WARN] app - Failed login for username: 'awd'
+[2021-05-14T18:27:07.572] [INFO] app - Received request from 127.0.0.1 as 'awd'
+[2021-05-14T18:27:07.574] [WARN] app - Failed login for username: 'awd'

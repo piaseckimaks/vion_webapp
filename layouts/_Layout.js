@@ -1,5 +1,8 @@
 import React from 'react'
 import styles from '../styles/layout.module.css'
+import useUser from '../util/useUser'
+import fetchJson from '../util/fetchJson'
+import { useRouter } from 'next/router'
 
 export default function Layout({children}) {
     const name = children[1].type.name;
@@ -13,7 +16,19 @@ export default function Layout({children}) {
 }
 
 function Navbar(props) {
+    const { user, mutateUser } = useUser()
+    const router = useRouter()
     const [active, setActive] = React.useState(props.name ? props.name : 'home');
+
+    async function signout(e)
+    {
+        e.preventDefault()
+        mutateUser(
+        await fetchJson('/api/auth/signout', { method: 'POST' }),
+        false
+        )
+        router.push('/')
+    }
 
     function handleActive(){ return }
     return (
@@ -32,20 +47,27 @@ function Navbar(props) {
                             <a onClick={handleActive} href="/apps" className={active === 'apps' ? 'nav-link active' : 'nav-link'}>Apps</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={handleActive} href="/dashboard"  className={active === 'dashboard' ? 'nav-link active' : 'nav-link'} >Dashboard</a>
+                            <a onClick={handleActive} href="/dashboard" className={active === 'dashboard' ? 'nav-link active' : 'nav-link'} >Dashboard</a>
                         </li>
                         <li className="nav-item">
                             <a onClick={handleActive} href="/alerts" className={active === 'alerts' ? 'nav-link active' : 'nav-link'}>Alerts</a>
                         </li>
                     </ul>
-                    <div>
-                        <form className="d-flex">
-                            <input id="a" className="text-light form-control me-2 bg-dark border border-dark" type="search" placeholder="Search" aria-label="Search"/>
-                            <button className="btn btn-dark text-light" type="submit">Search</button>
-                        </form>
+                    <div className="navbar-nav dropdown mx-5 px-5">
+                        
+                            <a className="nav-link" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                               <h1><i className="bi bi-person-circle"></i> </h1>
+                            </a>
+                        
+                        <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                            <li><a className="dropdown-item" href="#">Profile</a></li>
+                            <li><a className="dropdown-item" href="#">Settings</a></li>
+                            <li><a className="dropdown-item" href="/api/auth/signout" onClick={signout}>Sign out</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </nav>
     )
 }
+
