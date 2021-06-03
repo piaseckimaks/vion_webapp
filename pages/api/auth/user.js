@@ -1,13 +1,12 @@
 import withSession from '../../../util/session'
 import sqlite3 from 'sqlite3'
-import { resolveHref } from 'next/dist/next-server/lib/router/router'
 
 export default withSession(async (req,res)=>
 {
     const user = await req.session.get('user')
     const error = await req.session.get('error')
     const db = new sqlite3.Database('./database.db')
-
+    
     if(user)
     {
         db.all(

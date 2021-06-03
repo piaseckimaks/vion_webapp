@@ -5,7 +5,7 @@ import fetchJson from '../util/fetchJson'
 import Router from 'next/router'
 
 
-export default function home({ user }) {
+export default function home() {
 
     async function deleteFavApp(e, id)
     {
@@ -24,7 +24,7 @@ export default function home({ user }) {
         if(res.deleted) Router.push('/home')
     }
 
-    if(!user.apps) return <p className="position-absolute top-50 start-50 translate-middle" >Loading ...</p>
+    // if(!user.apps) return <p className="position-absolute top-50 start-50 translate-middle" >Loading ...</p>
 
     return (
         <div className="d-flex flex-wrap container-fluid h-100 pt-145 pb-45">
@@ -34,7 +34,7 @@ export default function home({ user }) {
                         <div className="bg-black vh-80 p-2">
                             <h4 >Favorites:</h4>
                             <ul className="list-group list-group-flush ">
-                                { user.apps.map((e, i) => <AppsListItem name={e.name} key={i} id={e.id} handleClick={deleteFavApp} />) }
+                                {/* { user.apps.map((e, i) => <AppsListItem name={e.name} key={i} id={e.id} handleClick={deleteFavApp} />) } */}
                             </ul>
                         </div>
                     </div>
@@ -106,17 +106,3 @@ function ToDoListItem({name})
         </li>
     )
 }
-
-export const getServerSideProps = withSession( async function ({ req, res })
-{
-    const user = req.session.get('user')
-    const apps = await fetchJson('http://localhost:3000/api/apps/get_fav_apps', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userId: user.id })})
-
-    // for(let k in apps) for(let ki in apps[k]) console.log('ssr' + apps[k][ki].id)
-    // console.log(apps.favApps)
-
-    if(!user || !apps)
-    { return {  redirect: { destination: '/', permanent: false, }, } }
-
-    return { props: { user: { apps: apps.favApps, ...user } } }
-})

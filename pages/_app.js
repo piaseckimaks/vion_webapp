@@ -4,9 +4,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Head from 'next/head'
 
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const Layout = Component.layout;
-
+  
   return (
     <Layout >
       <Head>
@@ -21,5 +21,3 @@ function MyApp({ Component, pageProps }) {
     </Layout>
     )
 }
-
-export default MyApp

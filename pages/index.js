@@ -14,12 +14,14 @@ export default function index() {
 
   useEffect(() => 
   {
+    if(user) console.log(user)
     let toastElList = [].slice.call(document.querySelectorAll('.toast'))
     let toastList = toastElList.map(function (toastEl) { return new bootstrap.Toast(toastEl) })  
     
     setToast(toastList[0])
   }, [])
 
+  
   async function handleSubmit (e)
   {
     e.preventDefault()
@@ -50,6 +52,9 @@ export default function index() {
       Router.push('/500');
     }
   }
+
+  if(user?.isLoggedIn) return <p>Loading...</p>
+
   return (
 
     <div className={styles.container} >
