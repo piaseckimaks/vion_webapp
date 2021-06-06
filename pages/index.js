@@ -53,7 +53,7 @@ export default function index() {
     }
   }
 
-  if(user?.isLoggedIn) return <p>Loading...</p>
+  // if(user?.isLoggedIn) return <p>Loading...</p>
 
   return (
 

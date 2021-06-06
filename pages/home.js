@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react'
-import layout from '../layouts/_Layout'
+import Layout from '../layouts/_Layout'
+import noLayout from '../layouts/_NoLayout'
 import withSession from '../util/session'
 import fetchJson from '../util/fetchJson'
 import Router from 'next/router'
-
+import useUser from '../util/useUser'
+import Spinner from 'react-bootstrap/Spinner'
 
 export default function home() {
+    const { user } = useUser({redirectTo: true, redirectIfFound: false})
 
     async function deleteFavApp(e, id)
     {
@@ -24,9 +27,10 @@ export default function home() {
         if(res.deleted) Router.push('/home')
     }
 
-    // if(!user.apps) return <p className="position-absolute top-50 start-50 translate-middle" >Loading ...</p>
+    if(!user?.isLoggedIn) return (<div className="bg-black vh-100 vw-100"><div className="position-absolute top-50 start-50 translate-middle" ><Spinner animation="border" role="status" /></div></div>)
 
     return (
+        <Layout>
         <div className="d-flex flex-wrap container-fluid h-100 pt-145 pb-45">
             <div className="container-fluid h-100">
                 <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 text-white h-100">
@@ -69,10 +73,11 @@ export default function home() {
                 </div>
             </div>
         </div>
+        </Layout>
     )
 }
 
-home.layout = layout;
+home.layout = noLayout;
 
 
 function AppsListItem({name, id, handleClick})

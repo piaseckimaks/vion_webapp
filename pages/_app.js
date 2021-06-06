@@ -2,11 +2,12 @@ import 'popper.js'
 import '../styles/globals.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Head from 'next/head'
-
+import useUser from '../util/useUser'
 
 export default function MyApp({ Component, pageProps }) {
   const Layout = Component.layout;
-  
+  const { user } = useUser()
+
   return (
     <Layout >
       <Head>

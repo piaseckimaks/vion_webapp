@@ -5,15 +5,15 @@ import fetchJson from './fetchJson'
 
 export default function useUser({redirectTo = false, redirectIfFound = false} = {})
 {
-    const { data: user, mutate: mutateUser } = useSWR('/api/auth/user', fetchJson)
-    // console.log(user)
-    // console.log(redirectTo)
-    useEffect(()=>
-    {
+    const { data: user, mutate: mutateUser } = useSWR('/api/auth/user')
+    
+    useEffect(()=> 
+    { 
         if( !redirectTo || !user ) return
-        if( (redirectTo && !redirectIfFound) || (redirectIfFound && user?.isLoggedIn) ) {console.log('redirect /home'); Router.push(redirectTo);}
-    },[user, redirectTo, redirectIfFound])
-
+        if( redirectTo && !redirectIfFound && !user?.isLoggedIn ) Router.push('/') 
+        if( redirectIfFound && user?.isLoggedIn ) Router.push(redirectTo)
+    }, [user, redirectIfFound, redirectTo])
+    
     return { user, mutateUser }
 }
 

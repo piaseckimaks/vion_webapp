@@ -48,3 +48,9 @@
 [2021-06-03T12:33:56.856] [INFO] app - User 'max' succesfully logged from 127.0.0.1
 [2021-06-03T12:45:57.689] [INFO] app - Received request from 127.0.0.1 as 'max'
 [2021-06-03T12:45:57.706] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-03T18:30:55.844] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-03T18:30:55.848] [WARN] app - Failed login for username: 'max'
+[2021-06-03T18:31:04.983] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-03T18:31:04.987] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-03T18:31:18.951] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-03T18:31:18.953] [INFO] app - User 'max' succesfully logged from 127.0.0.1

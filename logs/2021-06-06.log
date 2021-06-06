@@ -1,0 +1,12 @@
+[2021-06-06T16:31:03.981] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-06T16:31:03.990] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-06T17:58:37.135] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-06T17:58:37.139] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-06T18:39:48.626] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-06T18:39:48.632] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-06T18:40:17.242] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-06T18:40:17.244] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-06T18:40:19.878] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-06T18:40:19.880] [INFO] app - User 'max' succesfully logged from 127.0.0.1
+[2021-06-06T18:50:03.927] [INFO] app - Received request from 127.0.0.1 as 'max'
+[2021-06-06T18:50:03.933] [INFO] app - User 'max' succesfully logged from 127.0.0.1
