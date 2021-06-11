@@ -51,13 +51,14 @@ function Navbar({active}) {
                             <a onClick={handleActive} href="/alerts" className={active === 'alerts' ? 'nav-link active' : 'nav-link'}>Alerts</a>
                         </li>
                     </ul>
-                    <div className="navbar-nav dropdown mx-5 px-5">
-                        
-                            <a className="nav-link" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                               <h1><i className="bi bi-person-circle"></i> </h1>
-                            </a>
-                        
+                    
+                    <div className="navbar-nav dropdown me-5 px-5">
+                        <a className="nav-link" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <h1><i className="bi bi-person-circle"></i> </h1>
+                        </a>
                         <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                            <li className="dropdown-item-text text-center fs-5 text-capitalize user-select-none"> {user?.name} </li>
+                            <li><hr class="dropdown-divider"></hr></li>
                             <li><a className="dropdown-item" href="#">Profile</a></li>
                             <li><a className="dropdown-item" href="#">Settings</a></li>
                             <li><a className="dropdown-item" href="/api/auth/signout" onClick={signout}>Sign out</a></li>

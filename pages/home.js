@@ -1,11 +1,35 @@
 import Layout from '../layouts/_Layout'
-import { useUser } from '../util/'
+import { useUser, fetchJson } from '../util/'
 import { Spinner } from 'react-bootstrap/'
 import { HomePage } from '../layouts/components/'
+import { useEffect } from 'react'
 
-export default function home() {
-    const { user, mutateUser } = useUser({redirectTo: false, redirectIfFound: false})
+export default function home({ showInfoToast, showDialogToast }) {
+    const { user, mutateUser } = useUser({redirectTo: true, redirectIfFound: false})
     
+    useEffect(async ()=> 
+    {
+        await mutateUser(
+            fetchJson(
+                '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
+    }, [user])
+
+    async function deleteFavApp(e, id)
+    {
+        if(!id) return
+
+        showDialogToast(`Do you want to rmeove ${id} app from favorites?`)
+
+        await mutateUser( fetchJson( '/api/apps/del_fav_app',
+                {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({id: id}),
+                })
+        )
+
+        mutateUser( fetchJson( '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
+    }
 
     if(!user?.isLoggedIn) 
     {
@@ -20,7 +44,7 @@ export default function home() {
 
     return (
         <Layout active="home">
-            <HomePage />
+            <HomePage deleteFavApp={deleteFavApp} user={user}/>
         </Layout>
     )
 }

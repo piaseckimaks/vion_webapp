@@ -4,34 +4,7 @@ import ToDoListItem from './ToDoListItem'
 import { useUser, fetchJson } from '../../util'
 
 
-export default function HomePage({  }) {
-    const { user, mutateUser } = useUser({redirectTo: true, redirectIfFound: false})
-
-    useEffect(async ()=> 
-    {
-        await mutateUser(
-            fetchJson(
-                '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
-    }, [user])
-
-    async function deleteFavApp(e, id)
-    {
-        if(!id) return
-
-        await mutateUser(
-            fetchJson(
-                '/api/apps/del_fav_app',
-                {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({id: id}),
-                })
-        )
-
-        mutateUser(
-            fetchJson(
-                '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
-    }
+export default function HomePage({ deleteFavApp, user }) {
 
     return (
         <div className="d-flex flex-wrap container-fluid h-100 pt-145 pb-45">
