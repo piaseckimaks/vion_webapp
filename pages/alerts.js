@@ -1,12 +1,10 @@
-import layout from '../layouts/_Layout'
+import Layout from '../layouts/_Layout'
 
 
 export default function alerts() {
     return (
-        <div>
+        <Layout active="alerts">
             
-        </div>
+        </Layout>
     )
 }
-
-alerts.layout = layout;

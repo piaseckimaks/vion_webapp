@@ -1,4 +1,4 @@
-import layout from '../layouts/_NoLayout'
+
 
 export default function Custom404() {
     return (
@@ -7,5 +7,3 @@ export default function Custom404() {
         </div>
     )
 }
-
-Custom404.layout = layout;

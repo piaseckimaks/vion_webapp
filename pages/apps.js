@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react'
-import layout from '../layouts/_Layout'
+import Layout from '../layouts/_Layout'
 import fetchJson from '../util/fetchJson'
 import withSession from '../util/session'
 import useUser from '../util/useUser'
 import Router from 'next/router'
 
-export default function apps({ user }) {
-    // const { user, mutateUser } = useUser()
+export default function apps( ) {
+    const { user, mutateUser } = useUser({redirectTo: false, redirectIfFound: false})
     const [cards, setCards] = useState([])
     const [apps, setApps] = useState([])
 
@@ -23,25 +23,28 @@ export default function apps({ user }) {
     async function handleAddFav(e)
     {
         const appName = e.currentTarget.id
+        const tempArr = user?.favApps.filter(e=> e.name === appName)
+        console.log(tempArr)
+        if(tempArr.length > 0) return
 
-        if( user.apps.findIndex(el=> el.name === appName) > -1 ) return 
-        
-        const body = { appName: appName, userId: user.id }
-
-        const res = await fetchJson(
+        mutateUser(
+            fetchJson(
                 '/api/apps/add_fav_app',
-              {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body),
-              })
+                {method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({appName: appName})
+                }
+            )
+        )
         
-        if(!res.added) { console.log('error adding app'); return } 
+        mutateUser(
+            fetchJson(
+                '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
 
-        Router.push('/apps')
     }
 
     return (
+        <Layout>
         <div className="pt-120 h-100 d-flex">
             <ul className="py-3 min-w-25 list-group border-end border-secondary list-group-flush list h-100">
                 {apps.map((e, i) => (
@@ -78,21 +81,6 @@ export default function apps({ user }) {
                 })}
             </div>
         </div>
+        </Layout>
     )
 }
-
-apps.layout = layout;
-
-export const getServerSideProps = withSession( async function ({ req, res })
-{
-    const user = req.session.get('user')
-    const apps = await fetchJson('http://localhost:3000/api/apps/get_fav_apps', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userId: user.id })})
-
-    // for(let k in apps) for(let ki in apps[k]) console.log('ssr' + apps[k][ki].id)
-    // console.log(apps.favApps)
-
-    if(!user || !apps)
-    { return {  redirect: { destination: '/', permanent: false, }, } }
-
-    return { props: { user: { apps: apps.favApps, ...user } } }
-})

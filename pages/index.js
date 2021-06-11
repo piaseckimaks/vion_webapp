@@ -3,8 +3,8 @@ import useUser from '../util/useUser'
 import fetchJson from '../util/fetchJson'
 import Router from 'next/router'
 import styles from '../styles/index.module.css'
-import NoLayout from '../layouts/_NoLayout'
 import { Toast } from '../layouts/components'
+import { Spinner } from 'react-bootstrap'
 
 export default function index() {
   const { user, mutateUser } = useUser({redirectTo: '/home', redirectIfFound: true})
@@ -14,7 +14,6 @@ export default function index() {
 
   useEffect(() => 
   {
-    if(user) console.log(user)
     let toastElList = [].slice.call(document.querySelectorAll('.toast'))
     let toastList = toastElList.map(function (toastEl) { return new bootstrap.Toast(toastEl) })  
     
@@ -53,9 +52,7 @@ export default function index() {
     }
   }
 
-  // if(user?.isLoggedIn) return <p>Loading...</p>
-
-  return (
+  if(!user?.isLoggedIn) return (
 
     <div className={styles.container} >
       
@@ -86,6 +83,13 @@ export default function index() {
       </footer>
     </div>
   )
-}
 
-index.layout = NoLayout;
+  return (
+    <div className="bg-black vh-100 vw-100">
+      <div className="position-absolute top-50 start-50 translate-middle" >
+        <Spinner animation="border" role="status" />
+      </div>
+    </div>
+  )
+
+}

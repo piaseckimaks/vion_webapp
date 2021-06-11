@@ -1,12 +1,11 @@
-import layout from '../layouts/_Layout'
+import Layout from '../layouts/_Layout'
 
 
 export default function dashboard() {
     return (
-        <div>
+        <Layout active="dashboard">
             
-        </div>
+        </Layout>
     )
 }
 
-dashboard.layout = layout;

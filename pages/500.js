@@ -1,4 +1,4 @@
-import layout from '../layouts/_NoLayout'
+
 
 export default function Custom500() {
     return (
@@ -8,4 +8,3 @@ export default function Custom500() {
     )
 }
 
-Custom500.layout = layout;

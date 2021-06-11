@@ -4,21 +4,19 @@ import useUser from '../util/useUser'
 import fetchJson from '../util/fetchJson'
 import { useRouter } from 'next/router'
 
-export default function Layout({children}) {
-    const name = children[1].type.name;
+export default function Layout({children, active}) {
 
     return (
         <div>
-            <Navbar name={name}/>
+            <Navbar active={active}/>
             <div className={styles.content}>{children}</div>
         </div>
     )
 }
 
-function Navbar(props) {
+function Navbar({active}) {
     const { user, mutateUser } = useUser()
     const router = useRouter()
-    const [active, setActive] = React.useState(props.name ? props.name : 'home');
 
     async function signout(e)
     {

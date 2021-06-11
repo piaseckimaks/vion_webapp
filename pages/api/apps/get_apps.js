@@ -25,7 +25,9 @@ export default (req,res) =>
         (err,rows)=>
         {
             if(err) {logger.error(err); res.status(500).send({status: false, err: 'Internal server error!'}); return }
+            
             res.status(200).send({status: true, data: rows})
+
             logger.info('Data succesfully from /api/apps sent ' + req.connection.remoteAddress)
         })
 }
