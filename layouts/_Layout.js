@@ -7,9 +7,9 @@ import { useRouter } from 'next/router'
 export default function Layout({children, active}) {
 
     return (
-        <div>
+        <div className="vh-100 bg-dark overflow-hidden">
             <Navbar active={active}/>
-            <div className={styles.content}>{children}</div>
+            <div className="h-100">{children}</div>
         </div>
     )
 }
@@ -59,7 +59,7 @@ function Navbar({active}) {
                         <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
                             <li className="dropdown-item-text text-center fs-5 text-capitalize user-select-none"> {user?.name} </li>
                             <li><hr class="dropdown-divider"></hr></li>
-                            <li><a className="dropdown-item" href="#">Profile</a></li>
+                            <li><a className="dropdown-item" href="/profile">Profile</a></li>
                             <li><a className="dropdown-item" href="#">Settings</a></li>
                             <li><a className="dropdown-item" href="/api/auth/signout" onClick={signout}>Sign out</a></li>
                         </ul>

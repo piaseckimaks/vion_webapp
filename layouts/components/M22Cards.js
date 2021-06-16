@@ -5,7 +5,7 @@ export default function M22Cards({ cards }) {
     return (
         <div className="mx-auto text-primary d-flex flex-wrap justfy overflow-auto">
             {cards.map((e, i) => {
-                return (<div id={e.ip} key={e.id} className="card p-2 m-2 bg-black text-white" style={{ height: 150, width: 300 }}>
+                return (<div id={e.ip} key={e.id} className="card p-2 m-1 bg-black text-white" style={{ height: 150, width: 300 }}>
                     <p className="m-1 text-center fs-4">{e.name.toUpperCase()}</p>
                     <span className="m-1">
                         <span className="mx-3">Status:</span>

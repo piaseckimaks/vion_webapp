@@ -8,7 +8,7 @@ export default function HomePage({ deleteFavApp, user }) {
     const [personalTasks, setPersonalTasks] = useState([])
 
     return (
-        <div className="d-flex flex-wrap container-fluid h-100 pt-145 pb-45">
+        <div className="d-flex flex-wrap container-fluid h-100 mt-4 pb-45">
         <div className="container-fluid h-100">
             <div className="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 text-white h-100">
                 <div className="col vh-80">

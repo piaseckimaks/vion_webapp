@@ -54,7 +54,7 @@ export default function apps({ showInfoToast }) {
 
     return (
         <Layout>
-        <div className="pt-120 h-100 d-flex">
+        <div className="h-100 d-flex">
             <AppsList apps={apps} handleAddFav={handleAddFav} handleOpenApp={handleOpenApp} user={user}/>
             <div id="app" className="w-75 mx-auto text-primary p-2 d-flex flex-wrap justfy overflow-auto">
                 <M22Cards cards={cards} />
