@@ -1,20 +1,15 @@
-import { useState, useEffect } from 'react'
 import useUser from '../util/useUser'
 import fetchJson from '../util/fetchJson'
 import styles from '../styles/index.module.css'
 import { SigninForm, Footer } from '../layouts/components'
 import { Spinner } from 'react-bootstrap'
 
-export default function index({ showDialogToast, showInfoToast }) {
+export default function index({ showInfoToast }) {
   const { user, mutateUser } = useUser({redirectTo: '/home', redirectIfFound: true})
-  //error with three levels 0-succes, 1-warning, 2-danger
-  const [error, setError] = useState({message: '', level: 0});
-  const [toast, setToast] = useState();
   
   async function handleSubmit (e)
   {
     e.preventDefault()
-
     const body = { username: e.currentTarget.username.value, password: e.currentTarget.password.value }
 
     try
@@ -29,11 +24,7 @@ export default function index({ showDialogToast, showInfoToast }) {
 
       if(!res.isLoggedIn) showInfoToast({level: 1, message: 'Username or password not correct!'})
     }
-    catch(err)
-    {
-      console.log(err)
-      Router.push('/500');
-    }
+    catch(err) { Router.push('/500') }
   }
 
   if(!user?.isLoggedIn) return (

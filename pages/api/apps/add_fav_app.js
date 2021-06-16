@@ -17,7 +17,7 @@ log4js.configure(configLogs);
 
 const logger = log4js.getLogger();
 
-export default withSession( async(req,res) =>
+export default withSession( async(req, res) =>
 {
     const user = req.session.get('user')
     const { id: userId } = user
@@ -33,11 +33,10 @@ export default withSession( async(req,res) =>
 
             db.run(
                 `insert into FavApps (UserId, AppId) values ('${userId}', '${row.id}')`,
-                async (err, res) => 
+                async (err) => 
                 {
                     if(err) {logger.error(err); res.status(500).json({added: false, err: 'Internal server error!'}); return }
                     
-                    console.log('res: ', res)
 
                     req.session.set('user', user)
                     await req.session.save()

@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import FavAppsListItem from './FavAppsListItem'
 import ToDoListItem from './ToDoListItem'
-import { useUser, fetchJson } from '../../util'
 
 
 export default function HomePage({ deleteFavApp, user }) {
@@ -14,7 +13,7 @@ export default function HomePage({ deleteFavApp, user }) {
                     <div className="bg-black vh-80 p-2">
                         <h4 >Favorites:</h4>
                         <ul className="list-group list-group-flush ">
-                        { user?.favApps ? user.favApps.map((el, i) => <FavAppsListItem name={el.name} key={i} handleClick={(ev)=> deleteFavApp(ev, el.id)} />) : '' }
+                        { user?.favApps ? user.favApps.map((el, i) => <FavAppsListItem name={el.name} key={i} handleClick={()=> deleteFavApp( el.name, el.id )} />) : '' }
                         </ul>
                     </div>
                 </div>

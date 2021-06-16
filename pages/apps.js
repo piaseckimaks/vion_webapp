@@ -27,7 +27,7 @@ export default function apps({ showInfoToast }) {
 
         if(tempArr.length > 0) { showInfoToast({level: 1, message: 'App already in favorites!'}); return }
 
-        mutateUser( fetchJson( '/api/apps/add_fav_app',
+        await mutateUser( fetchJson( '/api/apps/add_fav_app',
                 {
                     method: 'POST',
                     headers: { 'Content-type': 'application/json' },
@@ -36,7 +36,7 @@ export default function apps({ showInfoToast }) {
             )
         )
         
-        mutateUser( fetchJson( '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
+        await mutateUser( fetchJson( '/api/apps/get_fav_apps', { headers: {'Content-Type': 'application/json'}, }))
 
         showInfoToast({level: 0, message: 'App succesfully added to favorites!'})
     }
@@ -55,7 +55,7 @@ export default function apps({ showInfoToast }) {
     return (
         <Layout>
         <div className="pt-120 h-100 d-flex">
-            <AppsList apps={apps} handleAddFav={handleAddFav} handleOpenApp={handleOpenApp} />
+            <AppsList apps={apps} handleAddFav={handleAddFav} handleOpenApp={handleOpenApp} user={user}/>
             <div id="app" className="w-75 mx-auto text-primary p-2 d-flex flex-wrap justfy overflow-auto">
                 <M22Cards cards={cards} />
             </div>

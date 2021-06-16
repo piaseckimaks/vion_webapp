@@ -25,18 +25,27 @@ export default function MyApp({ Component, pageProps }) {
     //this is needed for dialog toast to appear until user input
     if( dialog?._config ) dialog._config.autohide = false
 
+    console.log(dialog)
     setDialogToast(dialog)
     setInfoToast(info)
 
   }, [])
 
-  function showDialogToast(msg = '') { setDialogMsg(msg); dialogToast.show() }
+  function showDialogToast(msg = '') 
+  { 
+    setDialogMsg(msg); 
+    dialogToast.show() 
+  }
   function showInfoToast(data = {}) { setInfoData(data); infoToast.show() }
-  function hideDialogToast() { dialogToast.hide() }
+  function hideDialogToast(e) 
+  { 
+    dialogToast.hide()
+    return e.currentTarget.id
+  }
+  
 
   pageProps.showInfoToast = showInfoToast
   pageProps.showDialogToast = showDialogToast
-
   return (
     <div >
       <Head>
