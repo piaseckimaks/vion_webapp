@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 
 const utils = 
 [
-    { icon: "bi bi-check-circle-fill", fontColor: 'text-success' },
-    { icon: "bi mx-3 bi-exclamation-circle-fill", fontColor: 'text-warning'},
-    { icon: "bi mx-3 bi-dash-circle-fill", fontColor: 'text-danger'},
+    { icon: "bi bi-check-circle-fill", fontColor: 'text-success', border: 'success' },
+    { icon: "bi mx-3 bi-exclamation-circle-fill", fontColor: 'text-warning', border: 'warning'},
+    { icon: "bi mx-3 bi-dash-circle-fill", fontColor: 'text-danger', border: 'danger' },
 ]
 
 export default function InfoToast({ data }) {
@@ -16,8 +16,8 @@ export default function InfoToast({ data }) {
 
     return (
         <div className="position-fixed bottom-0 end-0 m-3">
-            <div id="info" className="toast bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
-            <div className={`toast-header bg-dark ${ utils[data?.level]?.fontColor }`}>
+            <div id="info" className={`toast bg-black border border-${utils[data?.level]?.border}`} role="alert" aria-live="assertive" aria-atomic="true">
+            <div className={`toast-header bg-black ${ utils[data?.level]?.fontColor }`}>
                 <i className={ utils[data?.level]?.icon } style={{fontSize: 30}}></i>
                 <strong className="ms-2">{data?.message}</strong>
             </div>

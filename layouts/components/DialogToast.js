@@ -13,7 +13,7 @@ export default function DialogToast({ msg, hideDialogToast }) {
 
     return (
         <div className="position-fixed text-white top-50 start-50 translate-middle ">
-            <div id="dialog" class="toast bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
+            <div id="dialog" class="toast bg-dark border border-white" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-body bg-dark">
                     {msg}
                     <div class="mt-2 pt-2 d-flex justify-content-between border-top">
