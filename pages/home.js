@@ -1,7 +1,7 @@
 import Layout from '../layouts/_Layout'
 import { useUser, fetchJson } from '../util/'
 import { Spinner } from 'react-bootstrap/'
-import { HomePage } from '../layouts/components/'
+import { HomePage,  } from '../layouts/components/'
 import { useEffect } from 'react'
 
 export default function home({ showInfoToast, showDialogToast, dialogRes }) {
