@@ -6,8 +6,8 @@ export default function ToDoListItem({name})
     const [taskDone, setTaskDone] = useState(false)
 
     if(editMode) return (
-        <li className="list-group-item bg-dark text-white d-flex justify-content-between">
-            <input className="bg-black text-white" value={task} onChange={(e)=> setTask(e.currentTarget.value)}></input>
+        <li className="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+            <textarea className="bg-black text-white w-100" value={task} onChange={(e)=> setTask(e.currentTarget.value)}></textarea>
             <a title="save" className="mx-1" onClick={()=> setEditMode( editMode ? false : true )}>
                 <i className="bi bi-check-circle"></i>
             </a>
@@ -15,15 +15,15 @@ export default function ToDoListItem({name})
     )
     
     if(taskDone) return(
-        <li className="list-group-item bg-dark text-white d-flex justify-content-between">
-            <span className='text-decoration-line-through'>{task}</span>
-            <div><i title="delete task from list" className="bi bi-dash-circle del-btn"></i></div>
+        <li className="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+            <p className='text-break text-decoration-line-through'>{task}</p>
+            <div className="mx-1"><i title="delete task from list" className="bi bi-dash-circle del-btn"></i></div>
         </li>
     )
 
     return(
-        <li className="list-group-item bg-dark text-white d-flex justify-content-between">
-            <span>{task}</span>
+        <li className="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+            <p className="text-break ">{task}</p>
             <div>
                 <a title="edit task" className="mx-1" onClick={()=> setEditMode( editMode ? false : true )}>
                     <i className="bi bi-pencil"></i>

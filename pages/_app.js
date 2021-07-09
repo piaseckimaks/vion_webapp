@@ -1,6 +1,6 @@
 //import 'popper.js'
-import '../styles/globals.css'
 import '../styles/custom_bootstrap.css'
+import '../styles/globals.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { useState, useEffect } from 'react'
 import Head from 'next/head'

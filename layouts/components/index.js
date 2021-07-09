@@ -8,5 +8,6 @@ import M22Cards from './M22Cards'
 import AlertFinder from './AlertFinder'
 import FavAppsListItem from './FavAppsListItem'
 import ReadersBf2Dash from './ReadersBf2Dash'
+import ResizeableDiv from './ResizeableDiv'
 
-export { InfoToast, DialogToast, HomePage, SigninForm, Footer, AppsList, M22Cards, AlertFinder, FavAppsListItem, ReadersBf2Dash }
+export { InfoToast, DialogToast, HomePage, SigninForm, Footer, AppsList, M22Cards, AlertFinder, FavAppsListItem, ReadersBf2Dash, ResizeableDiv }

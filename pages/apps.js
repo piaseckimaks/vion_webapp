@@ -61,6 +61,7 @@ export default function apps({ showInfoToast, showDialogToast }) {
         <div className="h-100 d-flex">
             <AppsList apps={apps} handleAddFav={handleAddFav} handleOpenApp={handleOpenApp} user={user}/>
             <div id="app" className="w-75 h-100 mx-auto text-primary p-2 d-flex flex-wrap justfy overflow-auto">
+                {openApp === 'intro' ? <div className=" w-100 text-center"><h2>Hello!</h2><p>This is page with apps avaiable. From the list on the left choose which app you want to open.</p></div> : ''}
                 {openApp === 'M2200 restart' ? <M22Cards showDialogToast={showDialogToast}/> : ''}
                 {openApp === 'Alert finder' ? <AlertFinder /> : ''}
             </div>

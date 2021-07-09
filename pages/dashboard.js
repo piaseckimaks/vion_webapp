@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { ReadersBf2Dash } from '../layouts/components'
 import { Spinner } from 'react-bootstrap'
 import readers from '../../../../Vion/readers_web/readers'
-
+import { ResizeableDiv } from '../layouts/components'
 
 const allReaders = readers.tsrdReaders.concat(readers.tssmReaders);
 
@@ -19,8 +19,6 @@ function readersToData(array)
 const data = readersToData(allReaders);
 
 export default function dashboard(){
-    // const [data, setData] = useState([])
-    // useEffect(()=> fetch('/api/data/readers_bf2').then( res => res.json() ).then( res => setData(res) ),[])
 
     if(data.length === 0)return (
         <Layout active="dashboard">
@@ -35,22 +33,28 @@ export default function dashboard(){
 
     return (
         <Layout active="dashboard">
-            <div className="h-100 py-2">
+            <div className="h-100 w-100 py-2">
             <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item text-white" role="presentation">
                 <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button">Readers BF2</button>
             </li>
             <li className="nav-item" role="presentation">
-                <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Map</button>
             </li>
             <li className="nav-item" >
-                <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Map 2</button>
             </li>
             </ul>
-            <div className="tab-content h-100" id="myTabContent">
-            <div className="tab-pane fade h-100 show active p-2" id="home" role="tabpanel" aria-labelledby="home-tab"><ReadersBf2Dash data={data}/></div>
-            <div className="tab-pane fade h-100" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div className="tab-pane fade h-100" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            <div className="tab-content h-100 w-100" id="myTabContent">
+            <div className="tab-pane fade h-100 show active p-2" id="home" role="tabpanel" aria-labelledby="home-tab"><ReadersBf2Dash /></div>
+            <div className="overflow-auto tab-pane fade h-100 w-100" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <img src="/map.svg"></img>
+            </div>
+            <div className="tab-pane fade h-100 w-100 p-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div className="border border-white w-75 mx-auto">
+                    <img src="/map (1).svg"></img>
+                </div>
+            </div>
             </div>
             </div>
         </Layout>

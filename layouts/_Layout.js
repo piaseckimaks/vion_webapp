@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '../styles/layout.module.css'
 import useUser from '../util/useUser'
 import fetchJson from '../util/fetchJson'
 import { useRouter } from 'next/router'
