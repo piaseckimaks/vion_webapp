@@ -20,7 +20,7 @@ export default withSession(async (req,res) =>
             if (err) 
             { 
                 logger.error(err)
-                res.status(500).json({error: 'Internal server error!'})
+                res.json({error: err})
                 return 
             }
 

@@ -22,6 +22,7 @@ export default function index({ showInfoToast }) {
           })
       )
 
+      console.log(res)
       if(!res.isLoggedIn) showInfoToast({level: 1, message: 'Username or password not correct!'})
     }
     catch(err) { Router.push('/500') }
