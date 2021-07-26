@@ -12,6 +12,9 @@ export default function index({ showInfoToast }) {
     e.preventDefault()
     const body = { username: e.currentTarget.username.value, password: e.currentTarget.password.value }
 
+console.log(body)
+console.log(JSON.stringify(body))
+
     try
     {
       const res = await mutateUser( fetchJson( '/api/auth/signin',
