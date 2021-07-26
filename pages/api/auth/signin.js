@@ -3,7 +3,7 @@ import sqlite3 from 'sqlite3'
 import { Keccak } from 'sha3'
 import withSession from '../../../util/session'
 
-const db = new sqlite3.Database('./database.db');
+const db = new sqlite3.Database('../../../database.db');
 
 export default withSession(async (req,res) =>
 {
