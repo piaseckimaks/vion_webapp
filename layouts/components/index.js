@@ -9,5 +9,6 @@ import AlertFinder from './AlertFinder'
 import FavAppsListItem from './FavAppsListItem'
 import ReadersBf2Dash from './ReadersBf2Dash'
 import ResizeableDiv from './ResizeableDiv'
+import NavBar from './NavBar'
 
-export { InfoToast, DialogToast, HomePage, SigninForm, Footer, AppsList, M22Cards, AlertFinder, FavAppsListItem, ReadersBf2Dash, ResizeableDiv }
+export { InfoToast, DialogToast, HomePage, SigninForm, Footer, AppsList, M22Cards, AlertFinder, FavAppsListItem, ReadersBf2Dash, ResizeableDiv, NavBar }
