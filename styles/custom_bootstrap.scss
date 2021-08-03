@@ -1,0 +1,51 @@
+$nav-tabs-link-active-bg: #000;
+$nav-tabs-link-active-color: #fff;
+$input-placeholder-color: #fff;
+$input-color: #fff;
+$input-plaintext-color: #fff;
+
+
+$nav-link-hover-color: #fff;
+.tab-content{ background-color: #000; }
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.item{
+    position: absolute;
+    cursor: grab;
+    border-radius: 0.1rem;
+    // border: 1px solid white;
+}
+
+.resize{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border-color: black;
+    z-index: 2;
+}
+
+.resize.ne{
+    top: -1px;
+    right: -1px;
+    cursor: ne-resize;
+}
+
+.resize.nw{
+    top: -1px;
+    left: -1px;
+    cursor: nw-resize;
+}
+
+.resize.se{
+    bottom: -1px;
+    right: -1px;
+    cursor: se-resize;
+}
+
+.resize.sw{
+    bottom: -1px;
+    left: -1px;
+    cursor: sw-resize;
+}
