@@ -1,4 +1,4 @@
-import { useUser } from '../../util'
+import { useUser, fetchJson } from '../../util'
 import { useRouter } from 'next/router'
 
 export default function NavBar({active}) {

@@ -9,6 +9,7 @@ export default function withSession(handler)
             cookieOptions:
             {
                 secure: process.env.NODE_ENV === 'production' ? true : false,
+                maxAge: 36000
             },
             password: process.env.SECRET_COOKIE_PASSWORD,
         })
